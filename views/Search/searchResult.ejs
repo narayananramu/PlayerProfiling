@@ -1,0 +1,54 @@
+<%layout('layout.ejs')%>
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="row">
+      <div class="col-xs-12 text-center logo">
+        <h1>PlayerProfiling</h1>
+        <p>Player Profiling Analytics Tool</p>
+      </div>
+    </div><br/>
+    <div class="row" style="margin-left: auto;margin-right: auto;">
+      <div class="col-xs-12 col-md-6 col-lg-4 col-md-offset-3 col-lg-offset-4">
+        <form action="/search" method="POST">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <input type="search" name="q" class="form-control input-lg" id="search" placeholder="Profile Search" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button class="btn btn-success btn-lg btn-block" type="submit">Profile Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div><br/>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <table class="table">
+          <thead>
+            <th>Legend</th>
+            <th>Value</th>
+          </thead>
+          <tbody>
+          <%= JSON.stringify(data) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        PlayerProfiling &copy; 2017. All Rights Reserved.
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    $.post(function(){
+      champion_id: $('td#PLID').text();
+    });
+  });
+</script>

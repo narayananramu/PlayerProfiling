@@ -1,0 +1,123 @@
+@import 'branding';
+.margin(@a,@b,@c,@d){
+  margin-top: @a;
+  margin-bottom: @b;
+  margin-left: @c;
+  margin-right: @d;
+}
+.padding(@a,@b,@c,@d){
+  padding-top: @a;
+  padding-bottom: @b;
+  padding-left: @c;
+  padding-right: @d;
+}
+.box-sizing(@a){
+  box-sizing: @a;
+  -moz-box-sizing: @a;
+  -webkit-box-sizing: @a;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  .margin(0,0,0,0);
+  .padding(0,0,0,0);
+}
+input{
+  box-shadow: none !important;
+  &.primary{
+    &:focus{
+      border-color: @color-green !important;
+    }
+  }
+}
+div.sidebar{
+  width: 50px;
+  max-width: 50px;
+  height: 100%;
+  position: fixed;
+  border-right: 1px solid #cccccc;
+  background-color: @color-green;
+  color: @color-white;
+  .margin(0,0,0,0);
+  .padding(0,0,0,0);
+  ul{
+    list-style: none;
+    width: 100%;
+    .margin(0,0,0,0);
+    .padding(0,0,0,0);
+    li{
+      .margin(0, 0, 0, 0);
+      .padding(0, 0, 0, 0);
+      .box-sizing(border-box);
+      cursor: pointer;
+      width: 100%;
+      border-bottom: 1px solid darken(@color-green,10%);
+      height: 50px;
+      text-align: center;
+      a{
+        color: @color-white;
+        .margin(0, 0, 0, 0);
+        .padding(0, 0, 0, 0);
+        .box-sizing(border-box);
+        font-size: 2.1rem;
+        line-height: 50px;
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+      &.logo {
+        height: 70px;
+        .padding(10px, 10px, 0, 0);
+        background-color: darken(@color-green,10%);
+        img {
+          width: 100%;
+        }
+      }
+      &:hover{
+        background-color: darken(@color-green,10%);
+      }
+    }
+  }
+}
+div.sentiment-box{
+  padding-top: 10px;
+  .box-sizing(border-box);
+  blockquote.twitter-tweet {
+    display: inline-block;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    border-color: #eee #ddd #bbb;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    margin: 10px 5px;
+    padding: 0 16px 16px 16px;
+    max-width: 468px;
+  }
+
+  blockquote.twitter-tweet p {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+  }
+
+  blockquote.twitter-tweet a {
+    color: inherit;
+    font-weight: normal;
+    text-decoration: none;
+    outline: 0 none;
+  }
+
+  blockquote.twitter-tweet a:hover,
+  blockquote.twitter-tweet a:focus {
+    text-decoration: underline;
+  }
+}
+canvas#myChart,canvas#myChart1{
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
